@@ -1,7 +1,7 @@
 # 展示了pytorch下 如何用 lmdb 构建不同的 dataset code, lmdb的好处是读取极其快速
 # code borrowed from 
 
-# 1. 存储item为 feature map tensor
+# 1. 存储item为 feature map tensor, 直接用 pickle load/store
 # code borrowed from https://github.com/rosinality/vq-vae-2-pytorch/blob/master/dataset.py
 
 # ============ #
@@ -61,7 +61,7 @@ for i, (top, bottom, label) in enumerate(loader):
 # ============================================================================================= #
 
 
-# 存储item为 图片的二进制
+# 存储item为 图片的二进制, 用 BytesIO and Image.open() load
 # code borrowed from https://github.com/rosinality/stylegan2-pytorch/edit/master/prepare_data.py
 
 
